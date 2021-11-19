@@ -1,7 +1,8 @@
 FROM golang:1.16.5-alpine
 
 # Set necessary environmet variables needed for our image
-ENV CGO_ENABLED=0 \
+ENV GO111MODULE=on \
+    CGO_ENABLED=0 \
     GOOS=linux \
     GOARCH=amd64
 
