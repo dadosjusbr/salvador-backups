@@ -6,6 +6,9 @@ ENV GO111MODULE=on \
     GOOS=linux \
     GOARCH=amd64
 
+# Move to working directory /build
+WORKDIR /build
+
 # Copy and download dependency using go mod
 COPY go.mod .
 COPY go.sum .
@@ -18,4 +21,4 @@ COPY . .
 RUN go build -o main
 
 # Command to run
-ENTRYPOINT ["./main"]
+ENTRYPOINT ["/build/main"]
