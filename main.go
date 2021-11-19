@@ -57,6 +57,7 @@ func main() {
 	if err := envconfig.Process("", &conf); err != nil {
 		log.Fatalf("Error loading config values from .env: %v", err)
 	}
+	conf.AID = strings.ToLower(conf.AID)
 
 	// reading and parsing stdin.
 	in, err := io.ReadAll(os.Stdin)
