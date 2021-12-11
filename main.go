@@ -96,6 +96,9 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error backups (%s, %d, %d, %+v) record in mongo:%v", conf.AID, conf.Year, conf.Month, backups, err)
 	}
+
+	// Printing the same input it gets. Acting as a proxy stage.
+	fmt.Print(string(in))
 }
 
 func connect(url string) (*mongo.Client, error) {
